@@ -31,7 +31,6 @@ class Scraper
     social_arr.each do |link|
       domain = link['href'].split('/')[2].split('.')[0]
       hash[:"#{domain}"] = link['href']
-      binding.pry
     end
     hash
   end
