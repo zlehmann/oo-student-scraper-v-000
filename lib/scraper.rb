@@ -23,7 +23,10 @@ class Scraper
     return student_collection
   end
 
-  def self.scrape_profile_page
+  def self.scrape_profile_page(profile_url)
+    html = open(profile_url)
+    doc = Nokogiri::HTML(html)
+    binding.pry
   end
 
 end
