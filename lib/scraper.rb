@@ -20,7 +20,7 @@ class Scraper
       hash[:profile_url] = student.css('a')[0]['href']
       student_collection << hash
     end
-    return student
+    return student_collection
   end
 
   def self.scrape_profile_page
