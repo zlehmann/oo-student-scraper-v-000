@@ -18,8 +18,8 @@ class Student
 
   def add_student_attributes(attributes_hash)
     #{:name, :location, :profile_url}
-    @name = attributes_hash.send(:name)
-    @location = attributes_hash.send(:location)
+    attributes_hash.each {|key, value| self.send(("@#{key}"), value)}
+    return self
   end
 
   def self.all
