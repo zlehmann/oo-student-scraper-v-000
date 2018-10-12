@@ -26,7 +26,14 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     html = open(profile_url)
     doc = Nokogiri::HTML(html)
-    binding.pry
+    social_arr = doc.css('.social-icon-container a')
+    hash = {}
+    social_arr.each do |link|
+      domain = link['href'].split('/')[2].split('.')[0]
+      hash[":#{domain}"] = link['href']
+      binding.pry
+    end
+    hash
   end
 
 end
