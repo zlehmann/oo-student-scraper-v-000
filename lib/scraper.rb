@@ -17,7 +17,7 @@ class Scraper
       hash = {:name => "", :location => "", :profile_url => ""}
       hash[:name] =
       hash[:location] =
-      hash[:profile_url] = student.css('a')['href']
+      hash[:profile_url] = student.css('a')[0]['href']
       binding.pry
       student << hash
     end
