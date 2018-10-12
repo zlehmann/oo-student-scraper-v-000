@@ -40,7 +40,7 @@ class Scraper
         hash[:blog] = link['href']
       end
     end
-    hash[:profile_quote] = doc.css('.profile-quote')
+    hash[:profile_quote] = doc.css('.profile-quote').text
     hash[:bio] = doc.css('.description-holder')[0].css('p').text
     hash
   end
