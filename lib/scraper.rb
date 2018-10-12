@@ -15,12 +15,13 @@ class Scraper
     student_cards = doc.css('.student-card')
     student_cards.each do |student|
       hash = {:name => "", :location => "", :profile_url => ""}
-      hash[:name] = 
-      hash[:location] = 
+      hash[:name] =
+      hash[:location] =
       hash[:profile_url] = student.css('a')['href']
       binding.pry
+      student << hash
     end
-    binding.pry
+    return student
   end
 
   def self.scrape_profile_page
